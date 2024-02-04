@@ -28,11 +28,36 @@ document.addEventListener("click", function (e) {
     }
 });
 
+//event za cekiranje taskova
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("btn-completed")) {
+        //dugme complete
         const element = e.target;
+
+        //pravimo da je completed
         const parent = element.closest(".task-box");
         parent.classList.toggle("completed");
+
+        const checkBtn = element.nextElementSibling;
+
+        checkBtn.classList.toggle("hidden");
+        element.classList.toggle("hidden");
+    }
+});
+
+//event za uncheck eventa
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-incompleted")) {
+        //dugme incoplete
+        const element = e.target;
+
+        //pravimo da je incoplete (bez plave boje i precrtanog)
+        const parent = element.closest(".task-box");
+        parent.classList.toggle("completed");
+
+        const checkBtn = element.previousElementSibling;
+        checkBtn.classList.toggle("hidden");
+        element.classList.toggle("hidden");
     }
 });
 
@@ -75,8 +100,10 @@ btnAdd.addEventListener("click", function () {
         <h3 class="task-heading">${taskName}</h3>
         <p class="task-description">${description}</p>
         <div class="button-container">
-            <ion-icon name="checkmark-sharp" class="btn-action btn-completed"></ion-icon>
-            <ion-icon name="close" class="btn-action btn-delete"></ion-icon>
+        <ion-icon name="checkmark-sharp" class="btn-action btn-completed"></ion-icon>
+        <ion-icon name="remove" class="btn-action btn-incompleted hidden"></ion-icon>
+
+        <ion-icon name="close" class="btn-action btn-delete"></ion-icon>
       </div>
         `;
 

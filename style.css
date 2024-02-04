@@ -15,8 +15,8 @@ body {
     height: 100vh;
     background: linear-gradient(
         135deg,
-        rgba(14, 109, 168, 1) 49%,
-        rgba(0, 212, 255, 1) 100%
+        rgba(14, 109, 168, 0.733) 49%,
+        rgba(0, 213, 255, 0.822) 100%
     );
 }
 
@@ -40,7 +40,7 @@ h1 {
     transform: translate(-50%, -50%);
     display: flex;
     width: 50%;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     padding: 3rem 5rem;
     border-radius: 2rem;
     max-height: 55rem;
@@ -105,6 +105,14 @@ form {
     font-size: 1.4rem;
     border-radius: 2rem;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-category:hover {
+    transform: scale(1.05);
+    color: #777;
+    background-color: #50aefc;
+    color: #fff;
 }
 
 .active-category {
@@ -123,6 +131,12 @@ form {
     outline: none;
     cursor: pointer;
     border-radius: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-add:hover {
+    transform: scale(1.03);
+    background-color: #0172cf;
 }
 
 .task-box {
@@ -220,6 +234,16 @@ form {
     transform: scale(1.1);
 }
 
+.btn-incompleted {
+    background-color: rgba(255, 136, 0, 0.938);
+    transition: all 0.3s;
+}
+
+.btn-incompleted:hover {
+    background-color: rgb(255, 145, 0);
+    transform: scale(1.1);
+}
+
 .btn-delete {
     background-color: rgba(255, 0, 0, 0.685);
     transition: all 0.3s;
@@ -238,4 +262,8 @@ form {
 .completed .task-heading,
 .completed .task-description {
     text-decoration: line-through;
+}
+
+.hidden {
+    display: none;
 }

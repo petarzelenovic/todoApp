@@ -175,14 +175,16 @@ form {
     line-height: 1.6;
 }
 
-.category-tag {
+.task-box .category-tag {
     margin-bottom: 0.5rem;
     padding: 0.5rem 0.7rem;
-    background-color: #007de3;
+    background-color: #008cff;
     color: #fff;
     display: inline-block;
     font-weight: 500;
     border-radius: 1rem;
+    margin-right: 0.3rem;
+    text-decoration: none;
 }
 
 .task-description {
@@ -209,7 +211,7 @@ form {
 }
 
 .btn-completed {
-    background-color: rgb(2, 190, 2);
+    background-color: rgba(2, 190, 2, 0.795);
     transition: all 0.3s;
 }
 
@@ -226,4 +228,14 @@ form {
 .btn-delete:hover {
     background-color: rgb(255, 0, 0);
     transform: scale(1.1);
+}
+
+.completed {
+    background-color: #007de3;
+    color: white;
+}
+
+.completed .task-heading,
+.completed .task-description {
+    text-decoration: line-through;
 }

@@ -28,6 +28,14 @@ document.addEventListener("click", function (e) {
     }
 });
 
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-completed")) {
+        const element = e.target;
+        const parent = element.closest(".task-box");
+        parent.classList.toggle("completed");
+    }
+});
+
 //event za ubacivanje novog todo
 btnAdd.addEventListener("click", function () {
     const taskName = taskNameEl.value;

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO app</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="todo-app">
+    <div class="new-task">
+      <h2 class="secondary-heading">Create New Task</h2>
+      <form>
+        <div class="task-container">
+          <label class="label-heading" for="task-name">Task Name</label>
+          <input type="text" placeholder="Example" id="task-name">
+        </div>
+
+        <div class="category-container">
+          <label class="label-heading">Category</label>
+          <div class="categories">
+            <button type="button" class="btn-category">Personal</button>
+            <button type="button" class="btn-category">Work</button>
+            <button type="button" class="btn-category">Study</button>
+            <button type="button" class="btn-category">Health</button>
+          </div>
+        </div>
+
+
+        <div class="description-container">
+          <label class="label-heading" for="description">Description</label>
+          <textarea id="description" class="text-area" cols="30" rows="7" placeholder="Example"></textarea>
+        </div>
+
+        <button type="button" class="btn-add">Add Task</button>
+      </form>
+
+    </div>
+    <div class="all-tasks">
+      <h2 class="secondary-heading-task">All Tasks</h2>
+
+      <div class="task-box">
+        <h4 class="category-tag">Personal</h4>
+        <h3 class="task-heading">Learn JavaScript</h3>
+        <p class="task-description">So you should watch the first 10 videos</p>
+      </div>
+
+      <div class="task-box">
+        <h4 class="category-tag">Work</h4>
+        <h3 class="task-heading">Do homework</h3>
+        <p class="task-description">Do the first 10 pages of math</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

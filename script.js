@@ -58,5 +58,13 @@ btnAdd.addEventListener("click", function () {
     //ubacivanje samog taska u DOM
     const allTasks = document.querySelector(".all-tasks");
     allTasks.appendChild(task);
+
+    //resetovanje inputa
+    taskNameEl.value = "";
+    descriptionEl.value = "";
+
+    for (let i = 0; i < btnActive.length; i++) {
+        btnActive[i].classList.toggle("active-category");
+    }
 });
 console.log(taskNameEl);

@@ -5,6 +5,8 @@ const taskNameEl = document.querySelector("#task-name");
 const btnCategories = document.querySelectorAll(".btn-category");
 const descriptionEl = document.querySelector("#description");
 
+//dugme za brisanje
+const btnRemove = document.querySelector(".btn-delete");
 //dugme za ubacivanje
 const btnAdd = document.querySelector(".btn-add");
 
@@ -14,6 +16,17 @@ for (let i = 0; i < btnCategories.length; i++) {
         btnCategories[i].classList.toggle("active-category");
     });
 }
+
+//event za brisanje elemenata
+//ne mozemo stavljati na dugmice jer se dinamicki kreiraju
+//pa moramo proveravati je l se taj event bas poziva
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-delete")) {
+        const element = e.target;
+        const parent = element.closest(".task-box");
+        parent.remove();
+    }
+});
 
 //event za ubacivanje novog todo
 btnAdd.addEventListener("click", function () {
@@ -53,6 +66,10 @@ btnAdd.addEventListener("click", function () {
         ${returnCategory()}
         <h3 class="task-heading">${taskName}</h3>
         <p class="task-description">${description}</p>
+        <div class="button-container">
+            <ion-icon name="checkmark-sharp" class="btn-action btn-completed"></ion-icon>
+            <ion-icon name="close" class="btn-action btn-delete"></ion-icon>
+      </div>
         `;
 
     //ubacivanje samog taska u DOM
@@ -67,4 +84,3 @@ btnAdd.addEventListener("click", function () {
         btnActive[i].classList.toggle("active-category");
     }
 });
-console.log(taskNameEl);
